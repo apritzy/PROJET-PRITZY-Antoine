@@ -1,0 +1,18 @@
+<body>
+
+<br/>
+<h2>Inscription</h2>
+<br/>
+
+<br/><label>Login : </label> <input [(ngModel)]="login"/>
+<div *ngIf = "!regEx2.test(login)">Doit contenir des chiffres et des lettres</div>
+
+<br/><label>Password : </label> <input [(ngModel)]="password"/>
+<div *ngIf = "!regEx2.test(password)">Doit contenir des chiffres et des lettres</div>
+
+<!-- <br/><label>Retaper le Password : </label> <input [(ngModel)]="verifpassword"/>
+<div *ngIf = "!regEx2.test(verifpassword)">Doit contenir des chiffres et des lettres</div> -->
+
+<br/><br/><button (click)="inscription()" [disabled]="!regEx2.test(login)&&!regEx2.test(password)">S'enregistrer</button>
+
+</body>

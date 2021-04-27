@@ -1,0 +1,6 @@
+<h1>Catalogue</h1>
+
+<br/>
+<div  *ngFor = "let o of observableproduits$ | async">
+    {{o.titre}} / {{o.prix}} - <button (click)="addPanier(o.ref)">Ajout Panier</button>
+</div>

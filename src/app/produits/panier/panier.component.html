@@ -1,0 +1,62 @@
+<br>
+<table>
+    <thead>
+        <tr>
+            <th><h1>Mon Panier</h1></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reference of references">
+            <td>{{reference.reference}}</td>
+            <td>{{reference.titre}}</td>
+            <td>{{reference.prix}}€</td>
+            <td><button (click)="onReferenceRemoved(reference)">Supprimer du panier</button></td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<br/>
+
+<div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form>
+          <div class="row">
+            <div class="col-50">
+              <h3>Adresse d'expédition</h3>
+              <label for="fname"><i class="fa fa-user"></i>Nom et Prénom</label>
+              <input type="text" id="fname" name="firstname" placeholder="Jean Dupont">
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email" placeholder="jeandupont@gmail.com">
+              <label for="adr"><i class="fa fa-address-card-o"></i> Adresse</label>
+              <input type="text" id="adr" name="address" placeholder="415 Rue de Napoléon">
+              <label for="city"><i class="fa fa-institution"></i> Ville</label>
+              <input type="text" id="city" name="city" placeholder="Paris">
+            </div>
+            <div class="col-50">
+              <h3>Paiement</h3>
+              <label for="cname">Nom sur la carte</label>
+              <input type="text" id="cname" name="cardname" placeholder="Jean Dupont">
+              <label for="ccnum">N° de carte</label>
+              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+              <label for="expmonth">Mois d'expiration</label>
+              <input type="text" id="expmonth" name="expmonth" placeholder="Septembre"> 
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Année d'expiration</label>
+                  <input type="text" id="expyear" name="expyear" placeholder="2018">
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" name="cvv" placeholder="352">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<br/><br/><button (click)="payer()" [disabled]="">Payer</button>
+
+
